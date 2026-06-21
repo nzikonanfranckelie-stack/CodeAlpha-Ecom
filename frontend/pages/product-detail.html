@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détail Produit - MonShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-main">
+      <div class="container header-content">
+        <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        <a href="../index.html" class="logo"><span class="logo-icon">🛍️</span>MonShop</a>
+        <div class="search-bar">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <button type="submit">🔍</button>
+          </form>
+        </div>
+        <div class="header-actions">
+          <div class="user-menu" id="user-menu">
+            <button class="header-action-btn" id="user-btn">👤</button>
+            <div class="user-dropdown" id="user-dropdown">
+              <div id="user-menu-logged-out">
+                <a href="login.html">🔑 Se connecter</a>
+                <a href="register.html">✨ Créer un compte</a>
+              </div>
+              <div id="user-menu-logged-in" class="hidden">
+                <div class="user-dropdown-header">
+                  <strong id="user-name"></strong>
+                  <small id="user-email"></small>
+                </div>
+                <a href="profile.html">👤 Mon compte</a>
+                <a href="orders.html">📦 Mes commandes</a>
+                <hr>
+                <a href="#" id="logout-btn">🚪 Déconnexion</a>
+              </div>
+            </div>
+          </div>
+          <a href="wishlist.html" class="header-action-btn">❤️<span class="badge" id="wishlist-count">0</span></a>
+          <a href="cart.html" class="header-action-btn">🛒<span class="badge" id="cart-count">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 1rem; padding-bottom: 4rem;">
+    <div class="breadcrumb" id="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="products.html">Boutique</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current" id="breadcrumb-product">Produit</span>
+    </div>
+
+    <div id="product-detail-container"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 MonShop - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/product-detail.js"></script>
+</body>
+</html>

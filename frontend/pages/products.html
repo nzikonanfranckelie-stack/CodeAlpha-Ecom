@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique - MonShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <!-- Header (même structure que index.html) -->
+  <div class="header-top">
+    <div class="container header-top-content">
+      <span>📞 Service client : 01 23 45 67 89</span>
+      <div><a href="#">Livraison gratuite dès 50€</a></div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="header-main">
+      <div class="container header-content">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">☰</button>
+        <a href="../index.html" class="logo"><span class="logo-icon">🛍️</span>MonShop</a>
+        <div class="search-bar">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <button type="submit">🔍</button>
+          </form>
+        </div>
+        <div class="header-actions">
+          <div class="user-menu" id="user-menu">
+            <button class="header-action-btn" id="user-btn">👤</button>
+            <div class="user-dropdown" id="user-dropdown">
+              <div id="user-menu-logged-out">
+                <a href="login.html">🔑 Se connecter</a>
+                <a href="register.html">✨ Créer un compte</a>
+              </div>
+              <div id="user-menu-logged-in" class="hidden">
+                <div class="user-dropdown-header">
+                  <strong id="user-name"></strong>
+                  <small id="user-email"></small>
+                </div>
+                <a href="profile.html">👤 Mon compte</a>
+                <a href="orders.html">📦 Mes commandes</a>
+                <a href="wishlist.html">❤️ Mes favoris</a>
+                <hr>
+                <a href="#" id="logout-btn">🚪 Déconnexion</a>
+              </div>
+            </div>
+          </div>
+          <a href="wishlist.html" class="header-action-btn">❤️<span class="badge" id="wishlist-count">0</span></a>
+          <a href="cart.html" class="header-action-btn">🛒<span class="badge" id="cart-count">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current" id="breadcrumb-title">Boutique</span>
+    </div>
+
+    <div class="section-header">
+      <div>
+        <h1 class="section-title" id="page-title">Tous nos produits</h1>
+        <p class="section-subtitle" id="page-subtitle">Découvrez notre sélection complète</p>
+      </div>
+    </div>
+
+    <div class="shop-layout">
+      <!-- Sidebar filtres -->
+      <aside class="filters-sidebar" id="filters-sidebar">
+        <div class="filter-group">
+          <h3 class="filter-title">Catégories</h3>
+          <div class="filter-options" id="filter-categories">
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="" checked>
+              <span>Toutes</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="vetements">
+              <span>👕 Vêtements</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="electronique">
+              <span>📱 Électronique</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="maison">
+              <span>🏠 Maison</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="livres">
+              <span>📚 Livres</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="beaute">
+              <span>💄 Beauté</span>
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="categorie" value="sport">
+              <span>⚽ Sport</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Prix</h3>
+          <div class="price-range">
+            <input type="number" id="prix-min" placeholder="Min" min="0">
+            <span>—</span>
+            <input type="number" id="prix-max" placeholder="Max" min="0">
+          </div>
+          <button class="btn btn-sm btn-outline mt-2" id="apply-price-filter" style="width: 100%;">Appliquer</button>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Options</h3>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" id="filter-promo">
+              <span>🔥 En promotion</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-new">
+              <span>✨ Nouveautés</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" id="filter-in-stock">
+              <span>✅ En stock</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary btn-block" id="reset-filters">
+          🔄 Réinitialiser
+        </button>
+      </aside>
+
+      <!-- Contenu principal -->
+      <div>
+        <div class="shop-toolbar">
+          <div class="results-count">
+            <strong id="results-count">0</strong> produits trouvés
+          </div>
+          <div class="toolbar-actions">
+            <button class="btn btn-sm btn-secondary mobile-filter-btn" id="mobile-filter-btn">
+              🎛️ Filtres
+            </button>
+            <select class="sort-select" id="sort-select">
+              <option value="recent">Plus récents</option>
+              <option value="prix_asc">Prix croissant</option>
+              <option value="prix_desc">Prix décroissant</option>
+              <option value="populaire">Populaires</option>
+              <option value="notes">Mieux notés</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="products-grid"></div>
+        <div id="pagination-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (même structure que index.html) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 MonShop - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/products-page.js"></script>
+</body>
+</html>

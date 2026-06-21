@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MonShop - Votre boutique en ligne de confiance. Découvrez nos produits de qualité à prix imbattables.">
+  <meta name="theme-color" content="#6366f1">
+  <title>MonShop - Boutique en ligne</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Header Top -->
+  <div class="header-top">
+    <div class="container header-top-content">
+      <span>📞 Service client : 01 23 45 67 89</span>
+      <div>
+        <a href="#">Livraison gratuite dès 50€</a> | 
+        <a href="#">Retours sous 30 jours</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Main -->
+  <header class="header" id="header">
+    <div class="header-main">
+      <div class="container header-content">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">☰</button>
+        
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🛍️</span>
+          MonShop
+        </a>
+        
+        <div class="search-bar">
+          <form id="search-form">
+            <input type="text" id="search-input" placeholder="Rechercher un produit..." aria-label="Rechercher">
+            <button type="submit" aria-label="Rechercher">🔍</button>
+          </form>
+        </div>
+        
+        <div class="header-actions">
+          <button class="header-action-btn" id="search-toggle-mobile" aria-label="Rechercher">🔍</button>
+          
+          <div class="user-menu" id="user-menu">
+            <button class="header-action-btn" id="user-btn" aria-label="Compte">👤</button>
+            <div class="user-dropdown" id="user-dropdown">
+              <div id="user-menu-logged-out">
+                <a href="pages/login.html">🔑 Se connecter</a>
+                <a href="pages/register.html">✨ Créer un compte</a>
+              </div>
+              <div id="user-menu-logged-in" class="hidden">
+                <div class="user-dropdown-header">
+                  <strong id="user-name">Bonjour</strong>
+                  <small id="user-email"></small>
+                </div>
+                <a href="pages/profile.html">👤 Mon compte</a>
+                <a href="pages/orders.html">📦 Mes commandes</a>
+                <a href="pages/wishlist.html">❤️ Mes favoris</a>
+                <hr>
+                <a href="#" id="admin-link" class="hidden">⚙️ Administration</a>
+                <a href="#" id="logout-btn">🚪 Déconnexion</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="pages/wishlist.html" class="header-action-btn" aria-label="Favoris">
+            ❤️
+            <span class="badge" id="wishlist-count">0</span>
+          </a>
+          
+          <a href="pages/cart.html" class="header-action-btn" aria-label="Panier">
+            🛒
+            <span class="badge" id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Nav Main -->
+    <nav class="nav-main">
+      <div class="container nav-main-content">
+        <div class="nav-categories">
+          <button class="nav-categories-btn">
+            ☰ Catégories
+          </button>
+          <div class="categories-dropdown" id="categories-dropdown">
+            <a href="pages/products.html?categorie=vetements">👕 Vêtements</a>
+            <a href="pages/products.html?categorie=electronique">📱 Électronique</a>
+            <a href="pages/products.html?categorie=maison">🏠 Maison</a>
+            <a href="pages/products.html?categorie=livres">📚 Livres</a>
+            <a href="pages/products.html?categorie=beaute">💄 Beauté</a>
+            <a href="pages/products.html?categorie=sport">⚽ Sport</a>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html" class="active">Accueil</a>
+          <a href="pages/products.html">Boutique</a>
+          <a href="pages/products.html?enPromo=true">Promotions <span class="promo-badge">HOT</span></a>
+          <a href="pages/products.html?nouveau=true">Nouveautés</a>
+          <a href="pages/contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <span class="logo">🛍️ MonShop</span>
+      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer">✕</button>
+    </div>
+    <div class="mobile-menu-content">
+      <a href="index.html">🏠 Accueil</a>
+      <a href="pages/products.html">🛒 Boutique</a>
+      <a href="pages/products.html?enPromo=true">🔥 Promotions</a>
+      <a href="pages/products.html?nouveau=true">✨ Nouveautés</a>
+      <hr>
+      <a href="pages/products.html?categorie=vetements">👕 Vêtements</a>
+      <a href="pages/products.html?categorie=electronique">📱 Électronique</a>
+      <a href="pages/products.html?categorie=maison">🏠 Maison</a>
+      <a href="pages/products.html?categorie=livres">📚 Livres</a>
+      <a href="pages/products.html?categorie=beaute">💄 Beauté</a>
+      <a href="pages/products.html?categorie=sport">⚽ Sport</a>
+      <hr>
+      <a href="pages/profile.html">👤 Mon compte</a>
+      <a href="pages/orders.html">📦 Mes commandes</a>
+      <a href="pages/wishlist.html">❤️ Mes favoris</a>
+      <a href="pages/contact.html">📞 Contact</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Découvrez le shopping<br>de demain</h1>
+          <p>Des milliers de produits de qualité, livrés rapidement chez vous. Profitez de nos offres exclusives et de notre service client 5 étoiles.</p>
+          <div class="hero-buttons">
+            <a href="pages/products.html" class="btn btn-primary btn-lg">
+              🛍️ Explorer la boutique
+            </a>
+            <a href="pages/products.html?enPromo=true" class="btn btn-outline btn-lg">
+              🔥 Voir les promos
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number">10K+</span>
+              <span class="hero-stat-label">Produits</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">50K+</span>
+              <span class="hero-stat-label">Clients</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">4.9★</span>
+              <span class="hero-stat-label">Note moyenne</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800" alt="Shopping">
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Nos catégories</h2>
+            <p class="section-subtitle">Explorez notre large sélection</p>
+          </div>
+        </div>
+        <div class="categories-grid" id="categories-grid">
+          <a href="pages/products.html?categorie=vetements" class="category-card">
+            <span class="category-icon">👕</span>
+            <div class="category-name">Vêtements</div>
+            <div class="category-count">+500 articles</div>
+          </a>
+          <a href="pages/products.html?categorie=electronique" class="category-card">
+            <span class="category-icon">📱</span>
+            <div class="category-name">Électronique</div>
+            <div class="category-count">+300 articles</div>
+          </a>
+          <a href="pages/products.html?categorie=maison" class="category-card">
+            <span class="category-icon">🏠</span>
+            <div class="category-name">Maison</div>
+            <div class="category-count">+400 articles</div>
+          </a>
+          <a href="pages/products.html?categorie=livres" class="category-card">
+            <span class="category-icon">📚</span>
+            <div class="category-name">Livres</div>
+            <div class="category-count">+1000 articles</div>
+          </a>
+          <a href="pages/products.html?categorie=beaute" class="category-card">
+            <span class="category-icon">💄</span>
+            <div class="category-name">Beauté</div>
+            <div class="category-count">+250 articles</div>
+          </a>
+          <a href="pages/products.html?categorie=sport" class="category-card">
+            <span class="category-icon">⚽</span>
+            <div class="category-name">Sport</div>
+            <div class="category-count">+200 articles</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section" style="background: white;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Produits vedettes</h2>
+            <p class="section-subtitle">Notre sélection pour vous</p>
+          </div>
+          <a href="pages/products.html" class="view-all">Voir tout →</a>
+        </div>
+        <div class="products-grid" id="featured-products">
+          <!-- Skeleton loading -->
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Nouveautés</h2>
+            <p class="section-subtitle">Les dernières tendances</p>
+          </div>
+          <a href="pages/products.html?nouveau=true" class="view-all">Voir tout →</a>
+        </div>
+        <div class="products-grid" id="new-arrivals">
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+          <div class="product-card"><div class="skeleton skeleton-image"></div><div class="product-content"><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-title"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="section">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%); border-radius: var(--radius-xl); padding: 3rem; color: white; text-align: center; position: relative; overflow: hidden;">
+          <div style="position: relative; z-index: 1;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">🔥 Soldes d'été</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Jusqu'à -50% sur une sélection de produits</p>
+            <a href="pages/products.html?enPromo=true" class="btn btn-lg" style="background: white; color: #ec4899;">
+              Découvrir les offres →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">🛍️ MonShop</div>
+          <p>Votre boutique en ligne de confiance depuis 2020. Qualité, service et prix imbattables.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">📺</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Boutique</h3>
+          <ul>
+            <li><a href="pages/products.html">Tous les produits</a></li>
+            <li><a href="pages/products.html?enPromo=true">Promotions</a></li>
+            <li><a href="pages/products.html?nouveau=true">Nouveautés</a></li>
+            <li><a href="pages/products.html?vedette=true">Meilleures ventes</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Service client</h3>
+          <ul>
+            <li><a href="pages/contact.html">Nous contacter</a></li>
+            <li><a href="#">Livraison</a></li>
+            <li><a href="#">Retours</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p style="margin-bottom: 1rem;">Recevez nos offres exclusives</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Votre email" required>
+            <button type="submit">OK</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 MonShop - Tous droits réservés</p>
+        <div class="payment-methods-footer">
+          <span title="Visa">💳</span>
+          <span title="Mastercard">💳</span>
+          <span title="PayPal">🅿️</span>
+          <span title="Apple Pay">🍎</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

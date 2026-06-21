@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commande - MonShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-main">
+      <div class="container header-content">
+        <a href="../index.html" class="logo"><span class="logo-icon">🛍️</span>MonShop</a>
+        <span style="color: var(--gray-600);">🔒 Paiement sécurisé</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 2rem 1.5rem 4rem;">
+    <div id="checkout-container"></div>
+  </main>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
